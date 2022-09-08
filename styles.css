@@ -3,6 +3,10 @@
   --color-points: hsl(229, 25%, 31%);
   --color-score: hsl(229, 64%, 46%);
   --color-border: hsl(217, 16%, 45%);
+  --color-scissors: hsl(39, 89%, 49%), hsl(40, 84%, 53%);
+  --color-paper: hsl(230, 89%, 62%), hsl(230, 89%, 65%);
+  --color-rock: hsl(349, 71%, 52%),hsl(349, 70%, 56%);
+
 }
 
 * {
@@ -13,8 +17,10 @@
 
 body {
   background: radial-gradient(at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  font-family: 'Barlow Semi Condensed', sans-serif;
   min-height: 100vh;
-  min-width: 100wh;
+  min-width: 100vw;
+  padding: 48px;
 }
 
 header {
@@ -23,8 +29,8 @@ header {
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
-    max-width: 800px;
-    margin: 48px auto;
+    max-width: 600px;
+    margin: 0 auto;
     padding: 12px 24px;
 
 }
@@ -55,4 +61,75 @@ h1 span {
     font-size: 54px;
     display: block;
     line-height: 42px;
+}
+
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 160px 0;
+
+}
+
+.options {
+    aspect-ratio: 313 / 278;
+    background-image: url("./images/bg-triangle.svg");
+    background-size: cover;
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.options .button {
+    
+    position: absolute;
+    width: 50%;
+}
+
+
+.button img {
+    width: 50%;
+}
+
+.button {
+    aspect-ratio: 1/1;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+
+.button__image-container {
+    background-color: var(--color-main);
+    height: 80%;
+    width: 80%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.button--paper {
+    left: 0;
+    top: 0;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(var(--color-paper));
+}
+
+.button--scissors {
+    right: 0;
+    top: 0;
+    transform: translate(50%,-50%);
+    background: linear-gradient(var(--color-scissors));
+}
+
+.button--rock {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,50%);
+    background: linear-gradient(var(--color-rock));
 }
