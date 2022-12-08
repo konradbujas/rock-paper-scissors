@@ -5,8 +5,7 @@
   --color-border: hsl(217, 16%, 45%);
   --color-scissors: hsl(39, 89%, 49%), hsl(40, 84%, 53%);
   --color-paper: hsl(230, 89%, 62%), hsl(230, 89%, 65%);
-  --color-rock: hsl(349, 71%, 52%),hsl(349, 70%, 56%);
-
+  --color-rock: hsl(349, 71%, 52%), hsl(349, 70%, 56%);
 }
 
 * {
@@ -17,119 +16,152 @@
 
 body {
   background: radial-gradient(at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
-  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-family: "Barlow Semi Condensed", sans-serif;
   min-height: 100vh;
   min-width: 100vw;
   padding: 48px;
 }
 
 header {
-    align-items: center;
-    border: solid 2px var(--color-border);
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 12px 24px;
-
+  align-items: center;
+  border: solid 2px var(--color-border);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 12px 24px;
 }
 
 h1 {
-    color: var(--color-main);
+  color: var(--color-main);
 }
-
 
 h1 span {
   display: block;
   line-height: 24px;
 }
 
-
 .score {
-    background-color: var(--color-main);
-    padding: 12px 24px;
-    border-radius: 6px;
+  background-color: var(--color-main);
+  padding: 12px 24px;
+  border-radius: 6px;
 }
 
 .score span {
-    color: var(--color-score);
+  color: var(--color-score);
 }
 
 .points {
-    color: var(--color-points);
-    font-size: 54px;
-    display: block;
-    line-height: 42px;
+  color: var(--color-points);
+  font-size: 54px;
+  display: block;
+  line-height: 42px;
 }
 
 main {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 160px 0;
-
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 160px 0;
 }
 
 .options {
-    aspect-ratio: 313 / 278;
-    background-image: url("./images/bg-triangle.svg");
-    background-size: cover;
-    width: 50%;
-    margin: 0 auto;
-    position: relative;
-
+  aspect-ratio: 313 / 278;
+  background-image: url("./images/bg-triangle.svg");
+  background-size: cover;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
 }
 
 .options .button {
-    
-    position: absolute;
-    width: 50%;
+  position: absolute;
+  width: 50%;
+  cursor: pointer;
 }
 
-
 .button img {
-    width: 50%;
+  width: 50%;
 }
 
 .button {
-    aspect-ratio: 1/1;
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  aspect-ratio: 1/1;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  box-shadow: inset 0px -8px 0px rgba(0, 0, 0, 0.25);
+  margin-top: 16px;
 }
-
-
 
 .button__image-container {
-    background-color: var(--color-main);
-    height: 80%;
-    width: 80%;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-}
-.button--paper {
-    left: 0;
-    top: 0;
-    transform: translate(-50%,-50%);
-    background: linear-gradient(var(--color-paper));
+  background-color: var(--color-main);
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0px 8px 0px rgba(0, 0, 0, 0.15);
 }
 
-.button--scissors {
-    right: 0;
-    top: 0;
-    transform: translate(50%,-50%);
-    background: linear-gradient(var(--color-scissors));
+.button--paper {
+  background: linear-gradient(var(--color-paper));
 }
 
 .button--rock {
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%,50%);
-    background: linear-gradient(var(--color-rock));
+  background: linear-gradient(var(--color-rock));
 }
+
+.button--scissors {
+  background: linear-gradient(var(--color-scissors));
+}
+
+.options .button--paper {
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+}
+
+.options .button--rock {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.options .button--scissors {
+  right: 0;
+  top: 0;
+  transform: translate(50%, -50%);
+}
+
+.fight {
+  color: var(--color-main);
+  display: flex;
+}
+
+.fight .button {
+    width: 50%;
+}
+
+.pick {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+    
+
+}
+
+
+
+.fight__title {
+    display: block;
+    width: 100%;
+}
+
+
