@@ -143,25 +143,39 @@ main {
 }
 
 .fight .button {
-    width: 50%;
+    width: 65%;
 }
+
+/* .fight__title {
+  display: block;
+  width: 100%;
+} */
 
 .pick {
     width: 50%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    position: relative;
+    /* position: relative; */
     margin: 0 auto;
+    align-items: flex-start;
     
 
 }
 
+.pick__title {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 24px;
+}
 
+.pick__placeholder {
+  aspect-ratio: 1/1;
+  width: 50%;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.25);
 
-.fight__title {
-    display: block;
-    width: 100%;
 }
 
 
