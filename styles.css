@@ -100,7 +100,12 @@ main {
 }
 
 .fight .button {
-    width: 65%;
+    width: 85%;
+}
+
+
+.hidden {
+  display: none;
 }
 
 .options {
@@ -114,7 +119,7 @@ main {
 
 .options .button {
   position: absolute;
-  width: 50%;
+  width: 65%;
   cursor: pointer;
 }
 
@@ -156,11 +161,16 @@ main {
 
 }
 
+.pick__container--player {
+  display: flex;
+  width: 85%;
+  justify-content: center;
+}
 
 
 .pick__placeholder {
   aspect-ratio: 1/1;
-  width: 50%;
+  width: 70%;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.25);
 
