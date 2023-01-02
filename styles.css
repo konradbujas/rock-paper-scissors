@@ -178,6 +178,7 @@ main {
   font-size: 54px;
   display: block;
   line-height: 42px;
+  text-align: center;
 }
 
 .score {
