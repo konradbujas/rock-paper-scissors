@@ -161,7 +161,7 @@ main {
 
 }
 
-.pick__container--player {
+.pick__container {
   display: flex;
   width: 85%;
   justify-content: center;
@@ -200,6 +200,7 @@ main {
 .score span {
   color: var(--color-score);
 }
+
 
 
 
