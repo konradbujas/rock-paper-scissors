@@ -55,11 +55,17 @@ const pickByAI = () => {
 };
 
 const hideOptions = () => {
-    document.querySelector(".options").classList.add("hidden");
+    const optionsElement = document.querySelector(".options");
+    optionsElement.classList.add("slide-left");
+    setTimeout(() => {
+        optionsElement.classList.add("hidden");
+    }, 300);
 };
 
 const showFight = () => {
-    document.querySelector(".fight").classList.remove("hidden");
+    const fightElement = document.querySelector(".fight");
+    fightElement.classList.add("slide-left");
+    fightElement.classList.remove("hidden");
     createElementPickByPlayer();
     createElementPickByAI();
 

@@ -17,9 +17,11 @@
 body {
   background: radial-gradient(at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
   font-family: "Barlow Semi Condensed", sans-serif;
+  overflow: hidden;
   min-height: 100vh;
   min-width: 100vw;
   padding: 48px;
+  
 }
 
 header {
@@ -45,13 +47,10 @@ h1 span {
 main {
   max-width: 600px;
   margin: 0 auto;
+  min-height: 70vh;
   padding: 160px 0;
+  position: relative;
 }
-
-
-
-
-
 
 
 
@@ -97,7 +96,16 @@ main {
 .fight {
   color: var(--color-main);
   display: flex;
+  width: 85%;
+  opacity: 0;
+  transform: translate(200%, -50%);
 }
+
+.fight.slide-left {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
 
 .fight .button {
     width: 85%;
@@ -114,8 +122,21 @@ main {
   background-size: cover;
   width: 50%;
   margin: 0 auto;
-  position: relative;
+  
+  
 }
+
+.options.slide-left {
+  
+  opacity: 0;
+  transform: translate(-200%, -50%);
+
+}
+
+
+
+
+
 
 .options .button {
   position: absolute;
@@ -201,6 +222,12 @@ main {
   color: var(--color-score);
 }
 
-
+section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s, opacity 0.3s;
+}
 
 
