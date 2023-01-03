@@ -1,4 +1,4 @@
-console.log('hello!');
+console.log('Hi, have a nice day! ;)');
 
 
 const playerWinsLSKey = "playerWins";
@@ -73,10 +73,12 @@ const showFight = () => {
 };
 
 const showResult = () => {
+    const resultTextElement = document.querySelector(".result__text");
     if (state.AIPick === state.playerPick) {
-        console.log("draw");
+        resultTextElement.innerText = "DRAW";
 
     } else if (WinningResultsMap[state.playerPick].includes(state.AIPick)) {
+        resultTextElement.innerText = "YOU WIN";
         localStorage.setItem(playerWinsLSKey, state.playerWins + 1);
         state = {
             ...state,
@@ -84,6 +86,7 @@ const showResult = () => {
         };
 
     } else {
+        resultTextElement.innerText = "YOU LOSE";
         localStorage.setItem(AIWinsLSKey, state.AIWins + 1);
         state = {
             ...state,
@@ -91,8 +94,16 @@ const showResult = () => {
         };
     }
 
+    setTimeout(renderResult, 300);
+
     renderScore();
 };
+
+const renderResult = () => {
+    document.querySelector(".result").classList.add("shown");
+
+};
+
 
 const createElementPickByPlayer = () => {
     const playerPick = state.playerPick;

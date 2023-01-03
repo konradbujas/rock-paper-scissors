@@ -96,7 +96,8 @@ main {
 .fight {
   color: var(--color-main);
   display: flex;
-  width: 85%;
+  align-items: center;
+  width: 100%;
   opacity: 0;
   transform: translate(200%, -50%);
 }
@@ -175,7 +176,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* position: relative; */
+    position: relative;
     margin: 0 auto;
     align-items: flex-start;
     
@@ -184,7 +185,7 @@ main {
 
 .pick__container {
   display: flex;
-  width: 85%;
+  width: 100%;
   justify-content: center;
 }
 
@@ -198,10 +199,15 @@ main {
 }
 
 .pick__title {
+  bottom: 100%;
+  left: 50%;
+  
   display: block;
   width: 100%;
+  position: absolute;
   text-align: center;
-  padding-bottom: 24px;
+  padding-bottom: 36px;
+  transform: translate(-50%, 0);
 }
 
 .points {
@@ -230,4 +236,31 @@ section {
   transition: transform 0.3s, opacity 0.3s;
 }
 
+.result {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  max-width: 0;
+  transition: max-width 0.3s;
+}
 
+.result.shown {
+  min-width: 30%;
+}
+
+.result__button {
+  background: color(--color-main);
+  border: none;
+  padding: 8px 24px;
+  color:  hsl(349, 71%, 52%);
+  border-radius: 6px;
+}
+
+.result__text {
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+}
