@@ -241,12 +241,12 @@ section {
   justify-content: center;
   flex-wrap: wrap;
   overflow: hidden;
-  max-width: 0;
-  transition: max-width 0.3s;
+  transform: scaleX(0);
+  transition: transform 0.3s;
 }
 
 .result.shown {
-  min-width: 30%;
+  transform: scaleX(1);
 }
 
 .result__button {

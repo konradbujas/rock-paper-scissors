@@ -94,7 +94,7 @@ const showResult = () => {
         };
     }
 
-    setTimeout(renderResult, 300);
+    setTimeout(renderResult, 600);
 
     renderScore();
 };
