@@ -29,6 +29,10 @@ const bindPickEvents = () => {
     
     document.querySelector(".result__button").addEventListener("click", playAgain);
     document.querySelector(".restart__button").addEventListener("click", restart);
+    document.querySelector(".rules__button").addEventListener("click", rules);
+    
+    document.querySelector(".rules").addEventListener("click", rules);
+    
 };
 
 const pick = (e) => {
@@ -100,9 +104,10 @@ const showResult = () => {
         };
     }
 
-    setTimeout(renderResult, 1000);
+    setTimeout(renderResult, 900);
 
     renderScore();
+    
 };
 
 const renderResult = () => {
@@ -154,7 +159,12 @@ const createPickElement = (option) => {
 
 const playAgain = () => {
     const fightElement = document.querySelector(".fight");
-    fightElement.classList.remove("slide-left");
+    
+    
+        fightElement.classList.remove("slide-left");
+
+    
+    
     setTimeout(() => {
         fightElement.classList.add("hidden");
     }, 300);
@@ -163,41 +173,39 @@ const playAgain = () => {
     const optionsElement = document.querySelector(".options");
     setTimeout(() => {
         optionsElement.classList.remove("slide-left");
-    }, 250);
+    }, 300);
    
-    setTimeout(() => {
+    
         optionsElement.classList.remove("hidden");
-    }, 200);
+  
 
-    document.querySelector(".result").classList.remove("shown");
+    setTimeout(() => {
+        document.querySelector(".result").classList.remove("shown");
     document.querySelector(".pick--player").classList.remove("moved");
     document.querySelector(".pick--ai").classList.remove("moved");
+    }, 400);
     
-}
+    
+};
 
 
 const restart = () => {
-    playAgain();
-    
-    // localStorage.setItem(AIWinsLSKey, 0);
-    // localStorage.setItem(playerWinsLSKey, 0);
-    
-    ////
-    
-    // state = {
-
-    //     playerWins: localStorage.setItem(playerWinsLSKey, 0),
-    //     AIWins: localStorage.setItem(AIWinsLSKey, 0),
-
-    // }
-
     localStorage.setItem(AIWinsLSKey, state.AIWins = 0);
     localStorage.setItem(playerWinsLSKey, state.playerWins = 0);
+
+    playAgain();
     
-
-
     renderScore();
-}
+};
+
+const rules = () => {  
+    
+   
+    document.querySelector(".rules").classList.toggle("hidden");
+    setTimeout(() => {
+        document.querySelector(".rules").classList.toggle("slide-top");
+    }, 300);
+};
 
 const  init = () => {
     renderScore();
