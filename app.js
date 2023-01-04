@@ -27,7 +27,8 @@ const bindPickEvents = () => {
         button.addEventListener("click", pick);
         });
     
-    document.querySelector(".result__button").addEventListener("click", reset);
+    document.querySelector(".result__button").addEventListener("click", playAgain);
+    document.querySelector(".restart__button").addEventListener("click", restart);
 };
 
 const pick = (e) => {
@@ -35,7 +36,6 @@ const pick = (e) => {
     pickByAI();
     hideOptions();
     showFight();
-    console.log(state);
 };
 
 const pickByPlayer = (pickedOption) => {
@@ -66,7 +66,11 @@ const hideOptions = () => {
 
 const showFight = () => {
     const fightElement = document.querySelector(".fight");
-    fightElement.classList.add("slide-left");
+    setTimeout(() => {
+        fightElement.classList.add("slide-left");
+    }, 300);
+    
+
     fightElement.classList.remove("hidden");
     createElementPickByPlayer();
     createElementPickByAI();
@@ -148,7 +152,7 @@ const createPickElement = (option) => {
 };
 
 
-const reset = () => {
+const playAgain = () => {
     const fightElement = document.querySelector(".fight");
     fightElement.classList.remove("slide-left");
     setTimeout(() => {
@@ -157,11 +161,42 @@ const reset = () => {
     
 
     const optionsElement = document.querySelector(".options");
-    optionsElement.classList.remove("slide-left");
+    setTimeout(() => {
+        optionsElement.classList.remove("slide-left");
+    }, 250);
+   
     setTimeout(() => {
         optionsElement.classList.remove("hidden");
     }, 200);
+
+    document.querySelector(".result").classList.remove("shown");
+    document.querySelector(".pick--player").classList.remove("moved");
+    document.querySelector(".pick--ai").classList.remove("moved");
     
+}
+
+
+const restart = () => {
+    playAgain();
+    
+    // localStorage.setItem(AIWinsLSKey, 0);
+    // localStorage.setItem(playerWinsLSKey, 0);
+    
+    ////
+    
+    // state = {
+
+    //     playerWins: localStorage.setItem(playerWinsLSKey, 0),
+    //     AIWins: localStorage.setItem(AIWinsLSKey, 0),
+
+    // }
+
+    localStorage.setItem(AIWinsLSKey, state.AIWins = 0);
+    localStorage.setItem(playerWinsLSKey, state.playerWins = 0);
+    
+
+
+    renderScore();
 }
 
 const  init = () => {

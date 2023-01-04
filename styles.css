@@ -277,4 +277,22 @@ section {
   font-weight: 700;
   text-align: center;
   width: 100%;
+  margin-bottom: 12px;
+}
+
+
+.restart {
+  display: block;
+  position: absolute;
+  top: 95%;
+
+}
+
+.restart__button {
+  position: relative;
+  border-radius: 6px;
+  background: none;
+  border: solid 1px var(--color-border);
+  padding: 8px 24px;
+  color: var(--color-main);
 }
