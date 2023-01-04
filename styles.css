@@ -179,16 +179,27 @@ main {
     position: relative;
     margin: 0 auto;
     align-items: flex-start;
+    transform: translate(0, 0);
+   transition: transform 0.3s;
     
-
 }
 
 .pick__container {
+  transform: translate(0, 0);
+  transition: transform 0.3s;
+  width: 85%;
   display: flex;
-  width: 100%;
   justify-content: center;
 }
 
+
+.pick--ai.moved {
+  transform: translate(25%, 0);
+}
+
+.pick--player.moved {
+  transform: translate(-25%, 0);
+}
 
 .pick__placeholder {
   aspect-ratio: 1/1;
@@ -238,15 +249,18 @@ section {
 
 .result {
   display: flex;
+  position: absolute;
   justify-content: center;
   flex-wrap: wrap;
+  left: 50%;
+  top: 50%;
   overflow: hidden;
-  transform: scaleX(0);
+  transform: scaleX(0) translate(-50%, -50%);
   transition: transform 0.3s;
 }
 
 .result.shown {
-  transform: scaleX(1);
+  transform: scaleX(1) translate(-50%, -50%);
 }
 
 .result__button {

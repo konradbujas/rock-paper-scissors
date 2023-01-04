@@ -26,6 +26,8 @@ const bindPickEvents = () => {
     document.querySelectorAll(".options button").forEach((button) => {
         button.addEventListener("click", pick);
         });
+    
+    document.querySelector(".result__button").addEventListener("click", reset);
 };
 
 const pick = (e) => {
@@ -94,13 +96,15 @@ const showResult = () => {
         };
     }
 
-    setTimeout(renderResult, 600);
+    setTimeout(renderResult, 1000);
 
     renderScore();
 };
 
 const renderResult = () => {
     document.querySelector(".result").classList.add("shown");
+    document.querySelector(".pick--player").classList.add("moved");
+    document.querySelector(".pick--ai").classList.add("moved");
 
 };
 
@@ -143,6 +147,22 @@ const createPickElement = (option) => {
 
 };
 
+
+const reset = () => {
+    const fightElement = document.querySelector(".fight");
+    fightElement.classList.remove("slide-left");
+    setTimeout(() => {
+        fightElement.classList.add("hidden");
+    }, 300);
+    
+
+    const optionsElement = document.querySelector(".options");
+    optionsElement.classList.remove("slide-left");
+    setTimeout(() => {
+        optionsElement.classList.remove("hidden");
+    }, 200);
+    
+}
 
 const  init = () => {
     renderScore();
