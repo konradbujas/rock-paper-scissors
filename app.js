@@ -70,12 +70,13 @@ const hideOptions = () => {
 
 const showFight = () => {
     const fightElement = document.querySelector(".fight");
+    fightElement.classList.remove("hidden");
     setTimeout(() => {
         fightElement.classList.add("slide-left");
     }, 300);
     
 
-    fightElement.classList.remove("hidden");
+    
     createElementPickByPlayer();
     createElementPickByAI();
 
@@ -161,7 +162,7 @@ const playAgain = () => {
     const fightElement = document.querySelector(".fight");
     
     
-        fightElement.classList.remove("slide-left");
+    fightElement.classList.remove("slide-left");
 
     
     
@@ -204,7 +205,7 @@ const rules = () => {
     document.querySelector(".rules").classList.toggle("hidden");
     setTimeout(() => {
         document.querySelector(".rules").classList.toggle("slide-top");
-    }, 300);
+    }, 100);
 };
 
 const  init = () => {

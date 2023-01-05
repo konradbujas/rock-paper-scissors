@@ -30,7 +30,7 @@ header {
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 12px 24px;
 }
@@ -164,13 +164,6 @@ main {
   transform: translate(50%, -50%);
 }
 
-
-
-/* .fight__title {
-  display: block;
-  width: 100%;
-} */
-
 .pick {
     width: 50%;
     display: flex;
@@ -267,9 +260,13 @@ section {
   background: color(--color-main);
   border: none;
   padding: 8px 24px;
-  color:  hsl(349, 71%, 52%);
+  color:  var(--color-score);
   border-radius: 6px;
   font-family: "Barlow Semi Condensed", sans-serif;
+  cursor: pointer;
+}
+.result__button:hover {
+  color: hsl(349, 71%, 52%);
 }
 
 .result__text {
@@ -300,6 +297,7 @@ section {
   padding: 8px 24px;
   color: var(--color-main);
   font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 16px;
 }
 
 
@@ -350,5 +348,63 @@ section {
 
 .rules__img {
   width: 95%;
+}
+
+@media screen and (max-width: 480px) {
+  
+  .fight {
+    flex-wrap: wrap;
+  } 
+  .fight .button {
+    width: 95%;
+  }
+  
+  .options {
+    width: 65%;
+  }
+  
+  .result,
+  .pick {
+    position: relative;
+    left: 0;
+    right: 0;
+    transform: translate(0, 0);
+  }
+
+  .pick--ai.moved {
+    transform: translate(10%, 0);
+  }
+  
+  .pick--player.moved {
+    transform: translate(-10%, 0);
+  }
+
+  .pick__title {
+    padding-bottom: 20px;
+  }
+
+  .result {
+    margin-top: 48px;
+    width: 100%;
+    transform: translate(0, 0) scaleX(0);
+  }
+
+  .result__button {
+    padding: 10px 44px;
+    font-size: 20px;
+  }
+
+  .result__text {
+    font-size: 44px;
+  }
+
+  .result.shown {
+    transform: translate(0, 0) scaleX(1);
+  }
+
+  .score {
+    padding: 8px 12px;
+  }
+
 }
 
